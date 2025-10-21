@@ -29,7 +29,7 @@
         }
         else
         {
-            print ("SKOLE")
+            print ("SKOLE");
         }
 
     }
