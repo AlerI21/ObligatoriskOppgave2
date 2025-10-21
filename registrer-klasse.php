@@ -15,3 +15,22 @@
     <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp" /> 
     <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
+
+<?php
+    if (isset($_POST ["registrerKlasseKnapp"]))
+    {
+        $klassekode=$_POST ["klassekode"];
+        $klassenavn=$_POST ["klassenavn"];
+        $studiumkode=$_POST ["studiumkode"];
+
+        if (!$klassekode || $klassenavn || $studiumkode)
+        {
+            print ("Du må fylle ut klassekode, klassenavn og studiumkode");
+        }
+        else
+        {
+            print ("SKOLE")
+        }
+
+    }
+
