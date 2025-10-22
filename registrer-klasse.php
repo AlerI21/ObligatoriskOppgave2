@@ -27,7 +27,7 @@
 
     $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-    $antallRader = mysql_num_rows($sqlResultat)
+    $antallRader = mysql_num_rows($sqlResultat);
 
      if($antall !=0) 
      {
