@@ -23,14 +23,23 @@
         $klassenavn=$_POST ["klassenavn"];
         $studiumkode=$_POST ["studiumkode"];
 
-        if (!$klassekode || !$klassenavn !$studiumkode)
-        {
-            print ("Du må fylle ut klassekode, klassenavn og studiumkode");
-        }
-        else
-        {
-            print ("SKOLE");
-        }
+        include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
+
+    $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
+    $sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+    $antallRader = mysql_num_rows($sqlResultat)
+
+     if($antall !=0) 
+     {
+        print ("Klassekode finnes fra f&oslashr");
+     }
+     else
+     {
+        $sqlSetning="INSERT INTO poststed VALUES ('$klassekode', '$klassenavn', '$studiumkode');";
+        mysqli_query($db, $sqlResultat) or die ("ikke mulig &aring; registrere data i databasen");
+        /*SQL-setningen er sendt til database-serveren*/
+        print("Denne klassen har n&aring; blitt registrert: $klassekode, $klassenavn, $studiumkode");
+     }
 
     }
 
