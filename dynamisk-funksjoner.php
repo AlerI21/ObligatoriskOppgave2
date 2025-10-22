@@ -6,5 +6,7 @@ function listeboksKlassekode()
 
     $sqlSetning="SELECT * FROM klassekode";
     $sqlResultat=mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-    
+
+    $antallRader=mysqli_num_rows($sqlResultat);
+    $klassekode=$rad["klassekode"];
 }
