@@ -13,7 +13,7 @@ $antallRader=mysqli_num_rows($sqlResultat); /*Beregner antall rader i resultatet
 
 print ("<h3>Registrerte klasser</h3>");
 print ("<table border=1>");
-print ("<tr><th align=left>klassekode</th> <th align='left'>klassenavn</th> <th align=left>studiumkode</th></tr>")
+print ("<tr><th align=left>klassekode</th> <th align='left'>klassenavn</th> <th align=left>studiumkode</th></tr>");
 
 for ($r=1;$r<=$antallRader;$r++)
 {
