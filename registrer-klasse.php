@@ -31,7 +31,7 @@
 
         if($antallRader !=0) 
         {
-            print ("Klassekode finnes fra f&oslashr");
+            print ("Klassekoden finnes fra f&oslashr");
         }
         else
         {
