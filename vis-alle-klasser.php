@@ -4,7 +4,7 @@
 	
 include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 
-$sqlSetning="SELECT * FROM klassekode;";
+$sqlSetning="SELECT * FROM klasse;";
 
 $sqlResultat=mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
 /*SQL-setning sendt til database-serveren */
