@@ -20,33 +20,30 @@
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
     </form>
 
-    
-
-
 
     <?php
-        if (isset($_POST ["registrerKlasseKnapp"]))
+        if (isset($_POST ["registrerStudentKnapp"]))
         {
-            $klassekode=$_POST ["klassekode"];
-            $klassenavn=$_POST ["klassenavn"];
-            $studiumkode=$_POST ["studiumkode"];
+            $brukernavn=$_POST ["brukernavn"];
+            $fornavn=$_POST ["fornavn"];
+            $etternavn=$_POST ["etternavn"];
 
             include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 
-        $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
+        $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";
         $sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
         $antallRader = mysqli_num_rows($sqlResultat);
 
         if($antallRader !=0) 
         {
-            print ("Klassekoden finnes fra f&oslashr");
+            print ("Studenten finnes fra f&oslashr");
         }
         else
         {
-            $sqlSetning="INSERT INTO klasse VALUES ('$klassekode', '$klassenavn', '$studiumkode');";
+            $sqlSetning="INSERT INTO student VALUES ('$brukernavn', '$fornavn', '$etternavn');";
             mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
             /*SQL-setningen er sendt til database-serveren*/
-            print("Denne klassen har n&aring; blitt registrert: $klassekode, $klassenavn, $studiumkode");
+            print("Denne studenten har n&aring; blitt registrert: $brukernavn, $fornavn, $etternavn");
         }
 
     }
