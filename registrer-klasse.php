@@ -27,15 +27,15 @@
 
     $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-    $antallRader = mysql_num_rows($sqlResultat);
+    $antallRader = mysqli_num_rows($sqlResultat);
 
-     if($antall !=0) 
+     if($antallRader !=0) 
      {
         print ("Klassekode finnes fra f&oslashr");
      }
      else
      {
-        $sqlSetning="INSERT INTO poststed VALUES ('$klassekode', '$klassenavn', '$studiumkode');";
+        $sqlSetning="INSERT INTO klasse VALUES ('$klassekode', '$klassenavn', '$studiumkode');";
         mysqli_query($db, $sqlResultat) or die ("ikke mulig &aring; registrere data i databasen");
         /*SQL-setningen er sendt til database-serveren*/
         print("Denne klassen har n&aring; blitt registrert: $klassekode, $klassenavn, $studiumkode");
