@@ -2,7 +2,7 @@
 /*
 /* Programmet skriver ut alle registrerte klasser*/
 	
-include("db-tilkoblinger.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
+include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 
 $sqlSetning="SELECT * FROM klassekode;";
 
