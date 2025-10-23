@@ -26,7 +26,6 @@
             }
             ?>
         </select>
-        <br/>
         <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
     </form>
