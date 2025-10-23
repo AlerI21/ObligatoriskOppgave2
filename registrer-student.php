@@ -26,6 +26,7 @@
             }
             ?>
         </select>
+        <br/>
         <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
     </form>
@@ -37,6 +38,7 @@
             $brukernavn=$_POST ["brukernavn"];
             $fornavn=$_POST ["fornavn"];
             $etternavn=$_POST ["etternavn"];
+            $klassekode=$_POST ["klassekode"];
 
             include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 
@@ -50,13 +52,15 @@
         }
         else
         {
-            $sqlSetning="INSERT INTO student VALUES ('$brukernavn', '$fornavn', '$etternavn');";
+            $sqlSetning="INSERT INTO student VALUES ('$brukernavn', '$fornavn', '$etternavn', '$klassekode');";
             mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
             /*SQL-setningen er sendt til database-serveren*/
-            print("Denne studenten har n&aring; blitt registrert: $brukernavn, $fornavn, $etternavn");
+            print("Denne studenten har n&aring; blitt registrert: $brukernavn, $fornavn, $etternavn, $klassekode");
         }
 
     }
+
+    ?>
 
 
 
