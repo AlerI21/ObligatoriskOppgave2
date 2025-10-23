@@ -7,11 +7,17 @@ function listeboksKlassekode()
     $sqlSetning="SELECT * FROM klasse;";
     $sqlResultat=mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
     /*SQL-setning sendt til database-serveren*/
-    while ($rad=mysqli_fetch_array($sqlResultat))
+
+    $antallRader=mysqli_num_rows("$sqlResultat");
+
+    for ($r=1;$r<=$antallRader;$r++)
     {
-        $klassekode=$rad["klassekode"];
-        print("<option value='$klassekode'>$klassekode</option>");
+        $rad=mysqli_fetch_array($sqlResultat);
+        $klassekode=$rad["klassekode"]
+
+         print("<option value='$klassekode'>$klassekode</option>");
     }
 
-    /*$klassekode = $rad["klassekode"];*/
+    
+
 }
