@@ -1,12 +1,12 @@
-<?php /* dynamiske funksjoner */
+/*<?php dynamiske funksjoner
 
 function listeboksKlassekode()
 {
-    include("db-tilkobling.php"); // kobler til database
+    include("db-tilkobling.php");  /*tilkobling til database-serveren utført og valg av database foretatt*/
 
-    $sqlSetning = "SELECT klassekode FROM klasse;"; 
-    $sqlResultat = mysqli_query($db, $sqlSetning) 
-        or die("ikke mulig &aring; hente data fra databasen");
+    $sqlSetning="SELECT * FROM klasse;";
+    $sqlResultat=mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+    /*SQL-setning sendt til database-serveren*/
 
     while ($rad = mysqli_fetch_array($sqlResultat)) {
         $klassekode = $rad["klassekode"];
