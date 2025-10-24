@@ -46,11 +46,11 @@ if (isset($_POST ["slettKlasseKnapp"]))
         /*Sjekk om det finnes studenter i klassen*/
         $sjekkSql = "SELECT COUNT(*) AS antall FROM student WHERE klassekode='$klassekode';";
         $resultat = mysqli_query($db, $sjekkSql) or die("ikke mulig &aring; registrere data i databasen");
-        $rad = mysqli_fetch_array("$resultat");
+        $rad = mysqli_fetch_array($resultat);
 
         if($antallStudenter > 0)
         {
-            print("Klassen $klassekode kan ikke slettes da det er studenter i den")
+            print("Klassen $klassekode kan ikke slettes da det er studenter i den");
         }
 
         else
