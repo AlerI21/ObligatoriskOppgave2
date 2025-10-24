@@ -47,6 +47,7 @@ if (isset($_POST ["slettKlasseKnapp"]))
         $sjekkSql = "SELECT COUNT(*) AS antall FROM student WHERE klassekode='$klassekode';";
         $resultat = mysqli_query($db, $sjekkSql) or die("ikke mulig &aring; registrere data i databasen");
         $rad = mysqli_fetch_array($resultat);
+        $antallStudenter = $rad["antall"];
 
         if($antallStudenter > 0)
         {
