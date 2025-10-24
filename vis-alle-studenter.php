@@ -18,10 +18,10 @@ print ("<tr><th align=left>brukernavn</th> <th align='left'>fornavn</th> <th ali
 for ($r=1;$r<=$antallRader;$r++)
 {
     $rad=mysqli_fetch_array($sqlResultat); /*ny rad hentet fra spørringsresultatet*/
-    $brukernavn=$_POST ["brukernavn"];
-    $fornavn=$_POST ["fornavn"];
-    $etternavn=$_POST ["etternavn"];
-    $klassekode=$_POST ["klassekode"];
+    $brukernavn=$rad ["brukernavn"];
+    $fornavn=$rad ["fornavn"];
+    $etternavn=$rad ["etternavn"];
+    $klassekode=$rad ["klassekode"];
 
     print ("<tr> <td> $brukernavn </td> <td> $fornavn </td> <td> $etternavn </td> <td> $klassekode </td> </tr>");
 
