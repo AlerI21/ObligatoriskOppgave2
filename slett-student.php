@@ -10,7 +10,7 @@
 
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
  Klassekode
-<select name="student" id="student">
+<select name="brukernavn" id="brukernavn">
     <option value ="">velg student</option>
     <?php
     include("db-tilkobling.php");
