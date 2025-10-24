@@ -11,7 +11,7 @@
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
  Klassekode
 <select name="klassekode" id="klassekode">
-    <option value ="">velg klassekode</option>
+    <option value ="">velg klasse</option>
     <?php
     include("db-tilkobling.php");
     $sqlSetning="SELECT * FROM klasse;";
