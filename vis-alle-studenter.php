@@ -1,6 +1,13 @@
 <?php /*vis-alle-studenter*/
 /*
 /* Programmet skriver ut alle registrerte studenter*/
+
+?>
+
+<!-- Knapp tilbake til index.html -->
+<button onclick="window.location.href='index.html'">Tilbake til forsiden</button>
+
+<?php
 	
 include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 

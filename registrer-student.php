@@ -6,6 +6,9 @@
     */
     ?> 
 
+    <!-- Knapp tilbake til index.html -->
+    <button onclick="window.location.href='index.html'">Tilbake til forsiden</button>
+    
     <h3>Registrer student</h3>
 
     <form method="post" action="" id="registrerStudentSkjema" name="registrerStudentSkjema">

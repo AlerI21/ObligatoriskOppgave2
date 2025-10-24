@@ -6,6 +6,9 @@
 
 <script src="funksjoner.js"> </script>
 
+<!-- Knapp tilbake til index.html -->
+<button onclick="window.location.href='index.html'">Tilbake til forsiden</button>
+
 <h3>Slett student</h3>
 
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
