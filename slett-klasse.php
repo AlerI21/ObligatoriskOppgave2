@@ -32,30 +32,44 @@ if (isset($_POST ["slettKlasseKnapp"]))
 {
     $klassekode=$_POST ["klassekode"];
     
-
     if (!$klassekode)
     {
         print ("Det er ikke valgt noen klassekode");
     }
 
+
+
     else
     {
         include("db-tilkobling.php"); /*Tilkobling til databaseserveren er etablert, og ønsket database er valgt*/
 
-        $sqlSetning="DELETE FROM klasse where klassekode='$klassekode';";
-        mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
-        /*SQL-setning sendt til database-serveren*/
+        /*Sjekk om det finnes studenter i klassen*/
+        $sjekkSql = "SELECT COUNT(*) AS antall FROM student WHERE klassekode='$klassekode';";
+        $resultat = mysqli_query($db, $sjekkSql) or die("ikke mulig &aring; registrere data i databasen");
+        $rad = mysqli_fetch_array("$resultat");
 
-        print("F&oslash;lgende klasse er n&aring; slettet: $klassekode");
+        if($antallStudenter > 0)
+        {
+            print("Klassen $klassekode kan ikke slettes da det er studenter i den")
+        }
 
+        else
+        {
+            $sqlSetning="DELETE FROM klasse where klassekode='$klassekode';";
+            mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
+            /*SQL-setning sendt til database-serveren*/
+
+            print("F&oslash;lgende klasse er n&aring; slettet: $klassekode");
+
+            
+    
+        }
+        
+
+    
     }
 
 }
-
-
-
-
-
 
 
 
