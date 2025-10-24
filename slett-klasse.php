@@ -23,6 +23,7 @@
             }
             ?>
 </select>
+<br/>
 <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
 
