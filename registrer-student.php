@@ -1,6 +1,6 @@
     <?php /*registrer-student*/
     /*
-    /* Programmet lager et html-skjema for å registrere student
+    /* Programmet lager et skjema for å registrere student
     /* Programmet lar brukeren registrere data (brukernavn, fornavn, etternavn og velge klassekode)
     /*
     */
