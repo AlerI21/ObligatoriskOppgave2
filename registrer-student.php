@@ -58,7 +58,7 @@
             $sqlSetning="INSERT INTO student VALUES ('$brukernavn', '$fornavn', '$etternavn', '$klassekode');";
             mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
             /*SQL-setningen er sendt til database-serveren*/
-            print("Denne studenten har n&aring; blitt registrert: $brukernavn, $fornavn, $etternavn, $klassekode");
+            print("Denne studenten har n&aring; blitt registrert: $fornavn, $etternavn");
         }
 
     }
