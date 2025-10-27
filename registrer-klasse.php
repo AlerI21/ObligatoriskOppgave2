@@ -41,7 +41,7 @@
             $sqlSetning="INSERT INTO klasse VALUES ('$klassekode', '$klassenavn', '$studiumkode');";
             mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
             /*SQL-setningen er sendt til database-serveren*/
-            print("Denne klassen har n&aring; blitt registrert: $klassekode, $klassenavn, $studiumkode");
+            print("Denne klassen har n&aring; blitt registrert: $klassekode");
         }
 
     }
